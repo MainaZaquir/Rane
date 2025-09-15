@@ -60,7 +60,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           I make your nights and events{' '}
-          <span className="text-primary bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
             unforgettable
           </span>
         </motion.h1>

@@ -87,7 +87,6 @@ export function Navigation() {
 
           {/* Theme Toggle & Mobile Menu */}
           <div className="flex items-center space-x-4">
-            {/* Updated to Light Mode Toggle (since dark is default) */}
             <Button
               variant="ghost"
               size="icon"

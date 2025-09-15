@@ -9,8 +9,7 @@ import {
   Smartphone, 
   Camera, 
   Monitor,
-  Volume2,
-  Zap
+  Volume2
 } from 'lucide-react';
 
 interface Equipment {
@@ -78,14 +77,6 @@ const equipment: Equipment[] = [
     icon: Monitor,
     usage: 'Visual feedback and control',
     examples: ['Track visualization', 'BPM monitoring', 'Playlist display']
-  },
-  {
-    id: 'lighting',
-    name: 'Smart Lighting',
-    description: 'Intelligent lighting system synchronized with music',
-    icon: Zap,
-    usage: 'Atmospheric enhancement',
-    examples: ['Beat-synced lights', 'Color themes', 'Mood lighting']
   }
 ];
 
@@ -116,7 +107,7 @@ export function ToolboxSection() {
       rotateX: 0,
       transition: {
         duration: 0.6,
-        type: "spring",
+        type: "spring" as const,
         damping: 20
       }
     }

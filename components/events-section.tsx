@@ -4,7 +4,19 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Calendar, MapPin, Users, Star, ChevronLeft, ChevronRight, X } from 'lucide-react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
+import Event1Img1 from '@/components/assets/events/event-1-1.png';
+import Event1Img2 from '@/components/assets/events/event-1-2.png';
+import Event1Img3 from '@/components/assets/events/event-1-3.png';
+
+import Event2Img1 from '@/components/assets/events/event-2-1.png';
+import Event2Img2 from '@/components/assets/events/event-2-2.png';
+import Event2Img3 from '@/components/assets/events/event-2-3.png';
+
+import Event3Img1 from '@/components/assets/events/event-3-1.png';
+import Event3Img2 from '@/components/assets/events/event-3-2.png';
+import Event3Img3 from '@/components/assets/events/event-3-3.png';
+
 
 interface Event {
   id: string;
@@ -13,7 +25,7 @@ interface Event {
   location: string;
   type: string;
   description: string;
-  images: string[];
+  images: (string | StaticImageData)[];
   stats: {
     guests: number;
     rating: number;
@@ -29,71 +41,65 @@ interface Event {
 const events: Event[] = [
   {
     id: '1',
-    title: 'Sarah & Michael\'s Wedding',
-    date: 'September 15, 2024',
-    location: 'Grand Oak Ballroom',
-    type: 'Wedding',
-    description: 'An elegant evening celebration with a perfect blend of romantic dinner music and energetic dance floor hits.',
+    title: 'Oldies & Soul Lovers & Friends Edition',
+    date: 'September 6, 2025',
+    location: 'Nakuru Golf Club',
+    type: 'RnB Event',
+    description: 'An elegant evening Rnb event with a perfect blend of romantic dinner Rnb and energetic dance floor hits.',
     images: [
-      './components/assets/Event-1.png',
-      'https://images.pexels.com/photos/1616113/pexels-photo-1616113.jpeg',
-      'https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg'
+      Event1Img1,
     ],
     stats: {
       guests: 150,
-      rating: 5.0,
+      rating: 4.2,
       duration: '6 hours'
     },
     testimonial: {
-      text: "Deejay Rane made our wedding absolutely perfect! The music selection was spot-on and kept everyone dancing all night.",
-      author: "Sarah Johnson",
-      role: "Bride"
+      text: "Deejay Rane made our Event absolutely perfect! The music selection was spot-on and kept everyone dancing all night.",
+      author: "Patrick Mureithi",
+      role: "Guest"
     }
   },
   {
     id: '2',
-    title: 'TechCorp Annual Gala',
-    date: 'August 20, 2024',
-    location: 'Metropolitan Convention Center',
-    type: 'Corporate',
-    description: 'A sophisticated corporate event featuring ambient background music during networking and upbeat selections for the after-party.',
+    title: 'Lovers & Riddims Edition',
+    date: 'August 30, 2025',
+    location: 'The Embassy Bistro',
+    type: 'Riddims Event',
+    description: 'A Fun Riddims event featuring the amazing Sanaipei Tande with a live performance.',
     images: [
-      'https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg',
-      'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg',
-      'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg'
+      Event2Img1,
     ],
     stats: {
-      guests: 300,
+      guests: 500,
       rating: 4.9,
-      duration: '4 hours'
+      duration: '7 hours'
     },
     testimonial: {
-      text: "Professional, punctual, and perfectly matched to our corporate culture. Excellent music curation for our diverse audience.",
-      author: "David Chen",
-      role: "Event Director"
+      text: "Professional, punctual, and perfectly matched to the riddim culture. Excellent music curation for the diverse audience.",
+      author: "Jennifer",
+      role: "Event Organizer"
     }
   },
   {
     id: '3',
-    title: 'Summer Pool Party Bash',
-    date: 'July 4, 2024',
-    location: 'Sunset Resort',
-    type: 'Party',
-    description: 'A high-energy pool party with summer hits, Latin rhythms, and crowd favorites that kept the party going until dawn.',
+    title: 'Afro Beat Evolution 2.0',
+    date: 'September 12, 2025',
+    location: 'The Redroom Arena',
+    type: 'Afro Beat Party',
+    description: 'A high-energy Afro party with summer hits, Amapiano, and a live performance from Nviiri that kept the party going until dawn.',
     images: [
-      'https://images.pexels.com/photos/1587927/pexels-photo-1587927.jpeg',
-      'https://images.pexels.com/photos/1540338/pexels-photo-1540338.jpeg',
-      'https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg'
+      Event3Img1,
     ],
     stats: {
-      guests: 200,
-      rating: 5.0,
+      guests: 800,
+      rating: 4.7,
       duration: '8 hours'
     },
     testimonial: {
       text: "Best party DJ in the city! The energy was incredible and the music selection was absolutely perfect for our summer bash.",
-      author: "Maria Rodriguez",
-      role: "Event Host"
+      author: "Maina Zaquir",
+      role: "Event Attendee"
     }
   }
 ];
