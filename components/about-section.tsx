@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import { Music, Camera, Mic, Users, Award, Clock } from 'lucide-react';
-import Rane from './Assets/events/Rane.jpg';
+import Rane from './Assets/Rane.jpg';
 
 export function AboutSection() {
   const { ref, inView } = useInView({
