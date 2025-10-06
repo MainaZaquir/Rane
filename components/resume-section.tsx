@@ -20,7 +20,7 @@ interface Milestone {
 const milestones: Milestone[] = [
   {
     id: '1',
-    year: '2024',
+    year: '2025',
     title: 'Senior Event DJ & Content Creator',
     organization: 'Freelance Professional',
     location: 'Regional Market',
@@ -36,7 +36,7 @@ const milestones: Milestone[] = [
   },
   {
     id: '2',
-    year: '2023',
+    year: '2024',
     title: 'Regional DJ Excellence Award',
     organization: 'Entertainment Professionals Association',
     location: 'Annual Conference',
@@ -51,7 +51,7 @@ const milestones: Milestone[] = [
   },
   {
     id: '3',
-    year: '2022',
+    year: '2023',
     title: 'DJ & Entertainment Coordinator',
     organization: 'Premier Event Company',
     location: 'Metropolitan Area',
@@ -67,11 +67,11 @@ const milestones: Milestone[] = [
   },
   {
     id: '4',
-    year: '2021',
-    title: 'Advanced DJ Certification',
-    organization: 'Professional DJ Academy',
-    location: 'Music Institute',
-    description: 'Completed advanced coursework in digital mixing, sound engineering, and performance techniques.',
+    year: '2023',
+    title: 'King of RnB',
+    organization: 'Nairobi Singalong',
+    location: 'Nairobi & environs',
+    description: 'Cemented my work in digital mixing, sound engineering, and performance techniques.',
     achievements: [
       'Graduated with honors',
       'Mastered Serato DJ Pro',
@@ -83,15 +83,14 @@ const milestones: Milestone[] = [
   },
   {
     id: '5',
-    year: '2020',
+    year: '2022',
     title: 'Resident DJ',
-    organization: 'Local Radio Station',
-    location: 'City Broadcasting',
-    description: 'Weekly radio show host and live event DJ, building audience and developing signature style.',
+    organization: 'Brew Bistro',
+    location: 'Westlands, Nairobi',
+    description: 'Weekly Friday show and live event DJ, building audience and developing signature style.',
     achievements: [
-      'Weekly show: 10K+ listeners',
-      'Booked 100+ live events',
-      'Social media growth: 5K followers',
+      'Booked 10+ live events',
+      'Social media growth: 15K followers',
       'Music industry connections'
     ],
     type: 'career',
@@ -99,13 +98,13 @@ const milestones: Milestone[] = [
   },
   {
     id: '6',
-    year: '2018',
-    title: 'Mobile DJ Services Launch',
+    year: '2022',
+    title: 'DJ Services Launch',
     organization: 'Personal Business Venture',
-    location: 'Local Market',
+    location: '254 Brewing',
     description: 'Started professional DJ services focusing on private parties and small events.',
     achievements: [
-      'Established client base of 50+ customers',
+      'Established client base of 30+ customers',
       'Invested in professional equipment',
       'Developed signature mixing style',
       'Built reputation for reliability'
@@ -115,16 +114,16 @@ const milestones: Milestone[] = [
   },
   {
     id: '7',
-    year: '2016',
-    title: 'College Radio DJ',
-    organization: 'University Radio Station',
-    location: 'Campus Broadcasting',
-    description: 'Student DJ and music director, discovered passion for music curation and live performance.',
+    year: '2019',
+    title: 'Deejaying in my room',
+    organization: 'None',
+    location: 'My Room',
+    description: 'Student DJ, discovered passion for music curation and live performance.',
     achievements: [
       'Music Director for 2 years',
-      'Increased listenership by 40%',
+      'Increased listenership by 25%',
       'Organized campus music events',
-      'Mentored new student DJs'
+      'Mentored new student DJs eg: Deejay Asiti'
     ],
     type: 'career',
     skills: ['Music Direction', 'Event Organization', 'Mentorship', 'Creative Programming']
@@ -297,10 +296,10 @@ export function ResumeSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           {[
-            { value: '8+', label: 'Years Experience' },
-            { value: '500+', label: 'Events Completed' },
-            { value: '50+', label: 'Vendor Partners' },
-            { value: '5★', label: 'Average Rating' }
+            { value: '7+', label: 'Years Experience' },
+            { value: '300+', label: 'Events Completed' },
+            { value: '10+', label: 'Vendor Partners' },
+            { value: '4.2★', label: 'Average Rating' }
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-3xl font-bold text-primary mb-2">{stat.value}</div>

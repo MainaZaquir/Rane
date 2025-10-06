@@ -50,9 +50,9 @@ const events: Event[] = [
       Event1Img1,
     ],
     stats: {
-      guests: 150,
+      guests: 950,
       rating: 4.2,
-      duration: '6 hours'
+      duration: '7 hours'
     },
     testimonial: {
       text: "Deejay Rane made our Event absolutely perfect! The music selection was spot-on and kept everyone dancing all night.",
@@ -71,7 +71,7 @@ const events: Event[] = [
       Event2Img1,
     ],
     stats: {
-      guests: 500,
+      guests: 700,
       rating: 4.9,
       duration: '7 hours'
     },

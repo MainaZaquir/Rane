@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import { Music, Camera, Mic, Users, Award, Clock } from 'lucide-react';
+import Rane from './Assets/events/Rane.jpg';
 
 export function AboutSection() {
   const { ref, inView } = useInView({
@@ -31,7 +32,7 @@ export function AboutSection() {
           >
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
-                src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg"
+                src={Rane}
                 alt="Deejay Rane"
                 width={500}
                 height={625}
