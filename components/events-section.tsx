@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Calendar, MapPin, Users, Star, ChevronLeft, ChevronRight, X } from 'lucide-react';
 import Image, { StaticImageData } from 'next/image';
-import Event1Img1 from '@/components/assets/events/event-1-1.png';
-import Event2Img1 from '@/components/assets/events/event-2-1.png';
-import Event3Img1 from '@/components/assets/events/event-3-1.png';
+import Event1Img1 from '@/components/Assets/events/event-1-1.png';
+import Event2Img1 from '@/components/Assets/events/event-2-1.png';
+import Event3Img1 from '@/components/Assets/events/event-3-1.png';
 
 
 interface Event {
