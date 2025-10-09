@@ -51,7 +51,6 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <motion.div
             className="flex items-center gap-2 text-xl font-bold"
             whileHover={{ scale: 1.05 }}
@@ -59,7 +58,6 @@ export function Navigation() {
           >
             <button onClick={() => scrollToSection('#hero')}>
               <div className="flex items-center gap-2">
-                {/* Placeholder Logo */}
                 <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                   <Music className="w-5 h-5 text-primary-foreground" />
                 </div>
@@ -68,7 +66,7 @@ export function Navigation() {
             </button>
           </motion.div>
 
-          {/* Desktop Navigation */}
+          
           <div className="hidden lg:flex space-x-8">
             {navItems.map((item, index) => (
               <motion.button
@@ -85,7 +83,7 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* Theme Toggle & Mobile Menu */}
+          
           <div className="flex items-center space-x-4">
             <Button
               variant="ghost"
@@ -98,7 +96,7 @@ export function Navigation() {
               <Sun className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </Button>
 
-            {/* Mobile Menu Button */}
+            
             <Button
               variant="ghost"
               size="icon"
@@ -110,7 +108,7 @@ export function Navigation() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        
         {isMobileMenuOpen && (
           <motion.div
             className="lg:hidden bg-background/95 backdrop-blur-md border-t border-border/50"

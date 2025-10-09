@@ -4,9 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Play, X } from 'lucide-react';
-import dynamic from 'next/dynamic';
-
-const ReactPlayer = dynamic(() => import('react-player'), { ssr: false }) as any;
+import { YouTubeEmbed } from './YouTubeEmbed';
 
 interface AudioMix {
   id: string;
@@ -21,40 +19,40 @@ interface AudioMix {
 const audioMixes: AudioMix[] = [
   {
     id: '1',
-    title: 'Ranefest Vol 1',
-    description: 'Taste of Kenyan Music Rane Fest Experience Vol `1',
-    thumbnail: 'https://i.ytimg.com/vi/RnY6qtcUydM/hqdefault.jpg?sqp=-oaymwEmCKgBEF5IWvKriqkDGQgBFQAAiEIYAdgBAeIBCggYEAIYBjgBQAE=&rs=AOn4CLDPQIjwRYaW7n1CT9efnLfugGVglg',
-    youtubeId: 'RnY6qtcUydM',
-    duration: '1:03:47',
-    genre: 'Kenyan tunes'
+    title: 'The RnB Throne with the King Of RnB Deejay Rane',
+    description: 'High-energy RnB hits to keep the dance floor packed',
+    thumbnail: 'https://i.ytimg.com/vi/RthnCMi_H5I/hqdefault.jpg',
+    youtubeId: 'RthnCMi_H5I',
+    duration: '1:34:46',
+    genre: 'RnB'
   },
   {
     id: '2',
     title: 'Hangout Sessions with DJ Asiti',
     description: 'Sophisticated music for hangout sessions and chill vibes',
-    thumbnail: 'https://i.ytimg.com/vi/jZZSqILIyOE/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDYEkz8oLY54IHs1XNp_oRsGOjvzw',
+    thumbnail: 'https://i.ytimg.com/vi/jZZSqILIyOE/hqdefault.jpg',
     youtubeId: 'jZZSqILIyOE',
     duration: '2:28:29',
     genre: 'Hangout Sessions'
   },
   {
     id: '3',
-    title: 'Party Anthem Hour',
-    description: 'High-energy hits to keep the dance floor packed',
-    thumbnail: 'https://i.ytimg.com/vi/RnY6qtcUydM/hqdefault.jpg?sqp=-oaymwEmCKgBEF5IWvKriqkDGQgBFQAAiEIYAdgBAeIBCggYEAIYBjgBQAE=&rs=AOn4CLDPQIjwRYaW7n1CT9efnLfugGVglg',
-    youtubeId: 'dQw4w9WgXcQ',
-    duration: '45:30',
-    genre: 'Party'
+    title: 'Ranefest Vol 1',
+    description: 'Taste of Kenyan Music Rane Fest Experience',
+    thumbnail: 'https://i.ytimg.com/vi/RnY6qtcUydM/hqdefault.jpg',
+    youtubeId: 'RnY6qtcUydM',
+    duration: '1:03:47',
+    genre: 'Kenyan tunes'
   },
-  {
-    id: '4',
-    title: 'Throwback Hits',
-    description: 'Nostalgic favorites from the 80s, 90s, and 2000s',
-    thumbnail: 'https://i.ytimg.com/vi/RnY6qtcUydM/hqdefault.jpg?sqp=-oaymwEmCKgBEF5IWvKriqkDGQgBFQAAiEIYAdgBAeIBCggYEAIYBjgBQAE=&rs=AOn4CLDPQIjwRYaW7n1CT9efnLfugGVglg',
-    youtubeId: 'dQw4w9WgXcQ',
-    duration: '52:08',
-    genre: 'Throwback'
-  }
+  // {
+    // id: '4',
+    // title: 'Throwback Hits',
+    // description: 'Nostalgic favorites from the 80s, 90s, and 2000s',
+    // thumbnail: 'https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg',
+    // youtubeId: 'dQw4w9WgXcQ',
+    // duration: '52:08',
+    // genre: 'Throwback'
+  // }
 ];
 
 export function AudioSection() {
@@ -67,24 +65,13 @@ export function AudioSection() {
   const containerVariants = {
     hidden: {},
     visible: {
-      transition: {
-        staggerChildren: 0.1
-      }
+      transition: { staggerChildren: 0.1 }
     }
   };
 
   const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 50
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
   return (
@@ -100,7 +87,7 @@ export function AudioSection() {
             Listen to My Mixes
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Experience the energy and versatility that I bring to every event. 
+            Experience the energy and versatility that I bring to every event.
             Each mix is crafted to create the perfect atmosphere for your special moments.
           </p>
         </motion.div>
@@ -124,25 +111,22 @@ export function AudioSection() {
                 <img
                   src={mix.thumbnail}
                   alt={mix.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/70 transition-colors duration-500" />
-                
-                {/* Play Button */}
+
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center transform transition-all duration-500 group-hover:scale-125 group-hover:bg-primary">
                     <Play className="w-6 h-6 text-primary-foreground ml-1" fill="currentColor" />
                   </div>
                 </div>
 
-                {/* Genre Badge */}
                 <div className="absolute top-4 left-4">
                   <span className="bg-primary/90 text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
                     {mix.genre}
                   </span>
                 </div>
 
-                {/* Duration Badge */}
                 <div className="absolute top-4 right-4">
                   <span className="bg-black/70 text-white px-2 py-1 rounded text-sm font-medium">
                     {mix.duration}
@@ -162,20 +146,19 @@ export function AudioSection() {
           ))}
         </motion.div>
 
-        {/* Modal for Video Player */}
         {selectedMix && (
           <motion.div
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 pointer-events-none"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedMix(null)}
           >
             <motion.div
-              className="bg-background rounded-lg p-6 w-full max-w-4xl"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
+              className="bg-background rounded-lg p-6 w-full max-w-4xl pointer-events-auto"
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.4 }}
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex justify-between items-start mb-4">
@@ -190,14 +173,11 @@ export function AudioSection() {
                   <X className="w-6 h-6" />
                 </button>
               </div>
-              
+
               <div className="aspect-video">
-                <ReactPlayer
-                  url={`https://www.youtube.com/watch?v=${selectedMix.youtubeId}`}
-                  width="100%"
-                  height="100%"
-                  controls
-                  playing
+                <YouTubeEmbed
+                  videoId={selectedMix.youtubeId}
+                  title={selectedMix.title}
                 />
               </div>
             </motion.div>

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Play, ChevronDown, Music } from 'lucide-react';
 
-// Dynamic import for Three.js component
+
 const ParticleBackground = dynamic(
   () => import('@/components/particle-background'),
   { 
@@ -31,16 +31,13 @@ export function HeroSection() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
       <Suspense fallback={<div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10" />}>
         <ParticleBackground />
       </Suspense>
       
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background/80" />
 
-      {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        {/* Added Deejay Rane branding */}
         <motion.div
           className="flex items-center justify-center gap-3 mb-8"
           initial={{ opacity: 0, y: 30 }}
@@ -104,7 +101,7 @@ export function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0 }}

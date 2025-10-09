@@ -24,12 +24,12 @@ const milestones: Milestone[] = [
     title: 'Senior Event DJ & Content Creator',
     organization: 'Freelance Professional',
     location: 'Regional Market',
-    description: 'Established premium DJ and content creation services, specializing in high-end weddings and corporate events.',
+    description: 'Established premium DJ, specializing in high end events.',
     achievements: [
-      'Averaged 15+ events per month',
-      'Maintained 5-star rating across all platforms',
+      'Averaged 5+ events per month',
+      'Booked 15+ live events',
+      'Maintained 4.3 star rating across all platforms',
       'Created viral content reaching 100K+ views',
-      'Built network of 50+ vendor partners'
     ],
     type: 'career',
     skills: ['Advanced Mixing', 'Content Strategy', 'Event Management', 'Client Relations']
@@ -37,43 +37,26 @@ const milestones: Milestone[] = [
   {
     id: '2',
     year: '2024',
-    title: 'Regional DJ Excellence Award',
-    organization: 'Entertainment Professionals Association',
-    location: 'Annual Conference',
-    description: 'Recognized for outstanding service quality and innovation in event entertainment.',
-    achievements: [
-      'Top 10% of regional DJs',
-      'Client satisfaction rating: 4.9/5',
-      'Featured in industry magazine',
-      'Speaking engagement at DJ summit'
-    ],
-    type: 'achievement'
-  },
-  {
-    id: '3',
-    year: '2023',
     title: 'DJ & Entertainment Coordinator',
     organization: 'Premier Event Company',
-    location: 'Metropolitan Area',
-    description: 'Led entertainment services for luxury weddings and corporate events while developing content creation skills.',
+    location: 'Nairobi Metropolitan Area',
+    description: 'Led entertainment services for luxury events while developing content creation skills.',
     achievements: [
-      'Managed 200+ events annually',
-      'Trained 5 junior DJs',
-      'Implemented new audio systems',
+      'Managed 100+ events annually',
+      'Trained 3 junior DJs',
       'Launched video content service'
     ],
     type: 'career',
     skills: ['Team Leadership', 'System Design', 'Video Production', 'Quality Control']
   },
   {
-    id: '4',
+    id: '3',
     year: '2023',
     title: 'King of RnB',
     organization: 'Nairobi Singalong',
     location: 'Nairobi & environs',
     description: 'Cemented my work in digital mixing, sound engineering, and performance techniques.',
     achievements: [
-      'Graduated with honors',
       'Mastered Serato DJ Pro',
       'Sound engineering certification',
       'Advanced scratching techniques'
@@ -82,14 +65,14 @@ const milestones: Milestone[] = [
     skills: ['Digital Mixing', 'Sound Engineering', 'Performance Arts', 'Technical Mastery']
   },
   {
-    id: '5',
+    id: '4',
     year: '2022',
     title: 'Resident DJ',
-    organization: 'Brew Bistro',
+    organization: '254 Beer District',
     location: 'Westlands, Nairobi',
     description: 'Weekly Friday show and live event DJ, building audience and developing signature style.',
     achievements: [
-      'Booked 10+ live events',
+      'Implemented new audio systems',
       'Social media growth: 15K followers',
       'Music industry connections'
     ],
@@ -97,14 +80,14 @@ const milestones: Milestone[] = [
     skills: ['Radio Broadcasting', 'Audience Engagement', 'Music Curation', 'Live Performance']
   },
   {
-    id: '6',
+    id: '5',
     year: '2022',
     title: 'DJ Services Launch',
     organization: 'Personal Business Venture',
-    location: '254 Brewing',
+    location: '254 Beer Dstrict',
     description: 'Started professional DJ services focusing on private parties and small events.',
     achievements: [
-      'Established client base of 30+ customers',
+      'Established client base of 10+ customers',
       'Invested in professional equipment',
       'Developed signature mixing style',
       'Built reputation for reliability'
@@ -113,7 +96,7 @@ const milestones: Milestone[] = [
     skills: ['Business Development', 'Equipment Management', 'Customer Service', 'Event Planning']
   },
   {
-    id: '7',
+    id: '6',
     year: '2019',
     title: 'Deejaying in my room',
     organization: 'None',
@@ -168,7 +151,7 @@ export function ResumeSection() {
             My Journey in Music
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            From college radio to professional events, here's how I've grown as a DJ and content creator 
+            From mixing in my room to professional events, here's how I've grown as a DJ and content creator 
             over the years. Each milestone represents growth, learning, and passion for music.
           </p>
         </motion.div>

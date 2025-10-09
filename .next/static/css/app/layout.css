@@ -460,23 +460,18 @@ video {
   body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
-    /* Improved mobile touch targets and scrolling */
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
 }
   
-  /* Enhanced mobile responsiveness */
   @media (max-width: 768px) {
     html {
       font-size: 14px;
     }
   }
   
-  /* Improved hover effects for touch devices */
-  
-  /* Better focus states for accessibility */
   button:focus-visible,
   a:focus-visible {
     outline: 2px solid hsl(var(--primary));
@@ -1389,6 +1384,10 @@ video {
 .bg-black\/80 {
   background-color: rgb(0 0 0 / 0.8);
 }
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
 .bg-border {
   background-color: hsl(var(--border));
 }
@@ -1744,10 +1743,6 @@ video {
 .text-accent-foreground {
   color: hsl(var(--accent-foreground));
 }
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
@@ -2098,6 +2093,11 @@ video {
   background-color: rgb(0 0 0 / 0.9);
 }
 
+.hover\:bg-blue-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 64 175 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-destructive\/80:hover {
   background-color: hsl(var(--destructive) / 0.8);
 }
@@ -2106,9 +2106,9 @@ video {
   background-color: hsl(var(--destructive) / 0.9);
 }
 
-.hover\:bg-green-700:hover {
+.hover\:bg-green-800:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(21 128 61 / var(--tw-bg-opacity));
+  background-color: rgb(22 101 52 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-muted:hover {
@@ -2119,9 +2119,9 @@ video {
   background-color: hsl(var(--muted) / 0.5);
 }
 
-.hover\:bg-pink-700:hover {
+.hover\:bg-pink-800:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(190 24 93 / var(--tw-bg-opacity));
+  background-color: rgb(157 23 77 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-primary:hover {
@@ -2140,9 +2140,9 @@ video {
   background-color: hsl(var(--primary) / 0.9);
 }
 
-.hover\:bg-red-700:hover {
+.hover\:bg-red-800:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-secondary:hover {
@@ -2300,6 +2300,12 @@ video {
 .group:hover .group-hover\:scale-125 {
   --tw-scale-x: 1.25;
   --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:scale-110 {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 

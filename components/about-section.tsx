@@ -23,7 +23,7 @@ export function AboutSection() {
     <section id="about" ref={ref} className="py-16 sm:py-24 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Image */}
+          
           <motion.div
             className="relative"
             initial={{ opacity: 0, x: -50 }}
@@ -42,7 +42,7 @@ export function AboutSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
             
-            {/* Floating Stats */}
+            
             <motion.div
               className="absolute -right-4 top-1/2 -translate-y-1/2 bg-card border border-border rounded-xl p-4 shadow-lg hidden lg:block"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -61,7 +61,7 @@ export function AboutSection() {
             </motion.div>
           </motion.div>
 
-          {/* Content */}
+          
           <motion.div
             className="space-y-8"
             initial={{ opacity: 0, x: 50 }}
@@ -93,7 +93,7 @@ export function AboutSection() {
               </div>
             </div>
 
-            {/* Stats Grid */}
+            
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {stats.map((stat, index) => (
                 <motion.div
@@ -110,7 +110,7 @@ export function AboutSection() {
               ))}
             </div>
 
-            {/* CTA */}
+            
             <motion.div
               className="flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 20 }}

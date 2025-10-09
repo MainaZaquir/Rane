@@ -78,28 +78,24 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Improved mobile touch targets and scrolling */
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
   }
   
-  /* Enhanced mobile responsiveness */
   @media (max-width: 768px) {
     html {
       font-size: 14px;
     }
   }
   
-  /* Improved hover effects for touch devices */
   @media (hover: hover) and (pointer: fine) {
     .hover-enhanced:hover {
       transform: translateY(-2px);
     }
   }
   
-  /* Better focus states for accessibility */
   button:focus-visible,
   a:focus-visible {
     outline: 2px solid hsl(var(--primary));

@@ -26,28 +26,28 @@ export function RecruiterSidebar() {
         const BODY = "Hi Deejay Rane, I'd like to discuss booking you for an upcoming event.";
         window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(SUBJECT)}&body=${encodeURIComponent(BODY)}`;
       },
-      color: "bg-primary text-black"
+      color: "bg-blue-600 hover:bg-blue-800"
   },
     {
       id: 'call',
       icon: Phone,
       label: 'Call Now',
       action: () => window.open('tel:+25442469001'),
-      color: 'bg-green-600 hover:bg-green-700'
+      color: 'bg-green-600 hover:bg-green-800'
     },
     {
       id: 'instagram',
       icon: Instagram,
       label: 'Instagram',
       action: () => window.open('https://instagram.com/deejay_Rane', '_blank'),
-      color: 'bg-pink-600 hover:bg-pink-700'
+      color: 'bg-pink-600 hover:bg-pink-800'
     },
     {
       id: 'youtube',
       icon: Youtube,
       label: 'YouTube',
       action: () => window.open('https://youtube.com/@Dj_Rane_The_scratch_kid', '_blank'),
-      color: 'bg-red-600 hover:bg-red-700'
+      color: 'bg-red-600 hover:bg-red-800'
     }
   ];
 
@@ -59,7 +59,7 @@ export function RecruiterSidebar() {
         animate={{ x: 0 }}
         transition={{ duration: 0.6, delay: 1 }}
       >
-        {/* Sidebar Content */}
+
         <AnimatePresence>
           {isExpanded && (
             <motion.div
@@ -91,14 +91,14 @@ export function RecruiterSidebar() {
           )}
         </AnimatePresence>
 
-        {/* Toggle Button */}
+
         <motion.button
             className="bg-primary text-primary-foreground w-12 h-20 rounded-l-xl flex flex-col items-center justify-center shadow-lg transition-colors duration-300 hover:bg-primary/90"
             onClick={() => setIsExpanded(!isExpanded)}
             whileHover={{ scale: 1.08, x: -3 }}
             whileTap={{ scale: 0.95 }}
           >
-            {/* Horizontal text */}
+            
           <span className="text-xs font-medium">HIRE ME</span>
 
             <motion.div
@@ -110,7 +110,7 @@ export function RecruiterSidebar() {
         </motion.button>
       </motion.div>
 
-      {/* Hover Tooltip when collapsed */}
+
       {!isExpanded && (
         <motion.div
           className="absolute right-16 top-1/2 -translate-y-1/2 bg-black text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none shadow-lg"

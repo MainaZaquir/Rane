@@ -150,28 +150,24 @@ export function ToolboxSection() {
               whileTap={{ scale: 0.95 }}
             >
               <div className="bg-card border border-border rounded-xl p-6 h-full transition-all duration-500 group-hover:shadow-2xl group-hover:border-primary/70 group-hover:bg-primary/5 perspective-1000">
-                {/* Icon */}
+                
                 <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 transition-all duration-500 group-hover:bg-primary/30 group-hover:scale-125 group-hover:rotate-12">
                   <item.icon className="w-8 h-8 text-primary transition-all duration-500 group-hover:scale-125 group-hover:text-primary-foreground" />
                 </div>
 
-                {/* Title */}
                 <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
                   {item.name}
                 </h3>
 
-                {/* Description */}
                 <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                   {item.description}
                 </p>
 
-                {/* Usage */}
                 <div className="mb-4">
                   <div className="text-sm font-medium text-primary mb-2">Primary Use:</div>
                   <div className="text-sm text-muted-foreground">{item.usage}</div>
                 </div>
 
-                {/* Examples */}
                 <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
                   <div className="text-sm font-medium mb-2">Examples:</div>
                   <ul className="space-y-1">
@@ -188,7 +184,6 @@ export function ToolboxSection() {
           ))}
         </motion.div>
 
-        {/* Bottom CTA */}
         <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}

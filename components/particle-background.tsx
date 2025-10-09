@@ -22,7 +22,7 @@ export default function ParticleBackground() {
     const width = mount.clientWidth;
     const height = mount.clientHeight;
 
-    // Scene setup
+    
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -31,7 +31,7 @@ export default function ParticleBackground() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     mount.appendChild(renderer.domElement);
 
-    // Particles
+    
     const particlesCount = 150;
     const positions = new Float32Array(particlesCount * 3);
     const velocities = new Float32Array(particlesCount * 3);
@@ -61,10 +61,10 @@ export default function ParticleBackground() {
 
     camera.position.z = 5;
 
-    // Store references
+    
     sceneRef.current = { scene, camera, renderer, particles };
 
-    // Animation
+    
     const animate = () => {
       const positionAttribute = particles.geometry.getAttribute('position');
       const positions = positionAttribute.array as Float32Array;
@@ -74,7 +74,7 @@ export default function ParticleBackground() {
         positions[i + 1] += velocities[i + 1];
         positions[i + 2] += velocities[i + 2];
 
-        // Wrap around
+        
         if (positions[i] > 10) positions[i] = -10;
         if (positions[i] < -10) positions[i] = 10;
         if (positions[i + 1] > 10) positions[i + 1] = -10;
@@ -92,7 +92,7 @@ export default function ParticleBackground() {
 
     animate();
 
-    // Handle resize
+    
     const handleResize = () => {
       const width = mount.clientWidth;
       const height = mount.clientHeight;

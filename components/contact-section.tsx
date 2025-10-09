@@ -20,7 +20,7 @@ export function ContactSection() {
     {
       icon: Phone,
       title: 'Phone',
-      value: '+(254) 424-69001',
+      value: '+254 742-469-001',
       action: () => window.open('tel:+25442469001')
     },
     {
@@ -56,7 +56,7 @@ export function ContactSection() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Contact Information */}
+          
           <motion.div
             className="space-y-8"
             initial={{ opacity: 0, x: -50 }}
@@ -92,7 +92,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* Event Types */}
+            
             <div>
               <h4 className="text-lg font-semibold mb-4">Event Types I Specialize In:</h4>
               <div className="space-y-3">
@@ -114,7 +114,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* Quick Stats */}
+            
             <motion.div
               className="grid grid-cols-3 gap-4 pt-6 border-t border-border"
               initial={{ opacity: 0, y: 20 }}
@@ -134,7 +134,7 @@ export function ContactSection() {
             </motion.div>
           </motion.div>
 
-          {/* Calendly Embed */}
+          
           <motion.div
             className="bg-muted/30 rounded-xl p-8"
             initial={{ opacity: 0, x: 50 }}
@@ -148,7 +148,7 @@ export function ContactSection() {
               </p>
             </div>
             
-            {/* Calendly Placeholder */}
+            
             <div className="bg-white rounded-lg p-8 text-center border-2 border-dashed border-border min-h-[400px] flex items-center justify-center">
               <div className="space-y-4">
                 <Calendar className="w-16 h-16 text-muted-foreground mx-auto" />
@@ -170,7 +170,7 @@ export function ContactSection() {
           </motion.div>
         </div>
 
-        {/* Bottom CTA */}
+
         <motion.div
           className="text-center mt-16 p-8 bg-primary/5 rounded-xl"
           initial={{ opacity: 0, y: 30 }}
@@ -192,7 +192,7 @@ export function ContactSection() {
               Send Message
             </button>
             <button 
-              onClick={() => window.open('tel:+25442469001')}
+              onClick={() => window.open('tel:+254742469001')}
               className="border border-border hover:border-primary text-foreground hover:text-primary hover:bg-primary/5 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               Call Now

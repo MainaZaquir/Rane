@@ -190,14 +190,12 @@ export function EventsSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   
-                  {/* Event Type Badge */}
                   <div className="absolute top-4 left-4">
                     <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium shadow-lg">
                       {event.type}
                     </span>
                   </div>
 
-                  {/* Rating Badge */}
                   <div className="absolute top-4 right-4">
                     <div className="bg-black/70 text-white px-2 py-1 rounded flex items-center gap-1 shadow-lg">
                       <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -235,7 +233,6 @@ export function EventsSection() {
           ))}
         </motion.div>
 
-        {/* Event Detail Modal */}
         {selectedEvent && (
           <motion.div
             className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
@@ -251,7 +248,6 @@ export function EventsSection() {
               exit={{ scale: 0.8, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Header */}
               <div className="p-6 border-b border-border">
                 <div className="flex justify-between items-start">
                   <div>
@@ -280,7 +276,6 @@ export function EventsSection() {
                 </div>
               </div>
 
-              {/* Image Carousel */}
               <div className="relative">
                 <div className="aspect-video">
                   <Image
@@ -307,7 +302,6 @@ export function EventsSection() {
                       <ChevronRight className="w-6 h-6" />
                     </button>
                     
-                    {/* Image Indicators */}
                     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                       {selectedEvent.images.map((_, index) => (
                         <button
@@ -325,7 +319,6 @@ export function EventsSection() {
                 )}
               </div>
 
-              {/* Content */}
               <div className="p-6">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
