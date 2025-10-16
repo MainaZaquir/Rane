@@ -4,6 +4,39 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, Phone, MapPin, Calendar, Clock, Music } from 'lucide-react';
 
+import { useEffect, useRef } from 'react';
+
+export function CalendlyWidget() {
+  const calendlyRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!document.getElementById('calendly-widget-script')) {
+      const script = document.createElement('script');
+      script.id = 'calendly-widget-script';
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.type = 'text/javascript';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  return (
+    <div>
+      <div
+        ref={calendlyRef}
+        className="calendly-inline-widget"
+        data-url="https://calendly.com/thedeejayrane"
+        style={{ minWidth: '320px', height: '630px' }}
+      />
+      <h4 className="font-semibold text-lg mb-2">Calendly Integration</h4>
+      <p className="text-muted-foreground text-sm">
+        Calendly booking widget would be embedded here.<br />
+        Visitors can select available time slots for consultations.
+      </p>
+    </div>
+  );
+}
+
 export function ContactSection() {
   const { ref, inView } = useInView({
     threshold: 0.1,
@@ -14,8 +47,8 @@ export function ContactSection() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'vikxkunta@gmail.com',
-      action: () => window.open('mailto:vikxkunta@gmail.com?subject=Event Booking Inquiry', '_blank')
+      value: 'thedeejayrane@gmail.com',
+      action: () => window.open('mailto:thedeejayrane@gmail.com?subject=Event Booking Inquiry', '_blank')
     },
     {
       icon: Phone,
@@ -118,19 +151,11 @@ export function ContactSection() {
             <motion.div
               className="grid grid-cols-3 gap-4 pt-6 border-t border-border"
               initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.8 }}
             >
-              {[
-                { value: '24hr', label: 'Response' },
-                { value: '100%', label: 'Reliable' },
-                { value: '4.5★', label: 'Rated' }
-              ].map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
+              <div>
+                <Calendar className="w-16 h-16 text-muted-foreground mx-auto" />
+                <CalendlyWidget />
+              </div>
             </motion.div>
           </motion.div>
 
@@ -152,15 +177,11 @@ export function ContactSection() {
             <div className="bg-white rounded-lg p-8 text-center border-2 border-dashed border-border min-h-[400px] flex items-center justify-center">
               <div className="space-y-4">
                 <Calendar className="w-16 h-16 text-muted-foreground mx-auto" />
-                <div>
-                  <h4 className="font-semibold text-lg mb-2">Calendly Integration</h4>
-                  <p className="text-muted-foreground text-sm">
-                    Calendly booking widget would be embedded here.<br />
-                    Visitors can select available time slots for consultations.
-                  </p>
+                <div className="calendly-inline-widget" data-url="https://calendly.com/thedeejayrane" style={{ minWidth: '320px', height: '630px' }}>
+                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
                 </div>
                 <button 
-                  onClick={() => window.open('https://calendly.com/deejayrane', '_blank')}
+                  onClick={() => window.open('https://calendly.com/thedeejayrane', '_blank')}
                   className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-colors"
                 >
                   Open Calendly
@@ -186,7 +207,7 @@ export function ContactSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
-              onClick={() => window.open('mailto:vikxkunta@gmail.com?subject=Event Booking Inquiry&body=Hi Deejay Rane, I\'d like to discuss booking you for an upcoming event.', '_blank')}
+              onClick={() => window.open('mailto:thedeejayrane@gmail.com?subject=Event Booking Inquiry&body=Hi Deejay Rane, I\'d like to discuss booking you for an upcoming event.', '_blank')}
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               Send Message
