@@ -7,7 +7,7 @@ export function Footer() {
   const socialLinks = [
     { icon: Instagram, href: 'https://instagram.com/deejay_Rane', label: 'Instagram' },
     { icon: Youtube, href: 'https://youtube.com/@Dj_Rane_The_scratch_kid', label: 'YouTube' },
-    { icon: Mail, href: 'mailto:vikxkunta@gmail.com', label: 'Email' },
+    { icon: Mail, href: 'mailto:thedeejayrane@gmail.com', label: 'Email' },
     { icon: Phone, href: 'tel:+25442469001', label: 'Phone' },
     { icon: Phone, href: 'tel:+25438680796', label: 'Phone' },
   ];
@@ -71,8 +71,8 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4" />
-                <a href="mailto:deejayrane@example.com" className="hover:text-primary transition-colors">
-                  vikxkunta@gmail.com
+                <a href="mailto:thedeejayrane@gmail.com" className="hover:text-primary transition-colors">
+                  thedeejayrane@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">

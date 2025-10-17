@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, Phone, MapPin, Calendar, Clock, Music } from 'lucide-react';
-
 import { useEffect, useRef } from 'react';
 
 export function CalendlyWidget() {
@@ -14,23 +13,38 @@ export function CalendlyWidget() {
       const script = document.createElement('script');
       script.id = 'calendly-widget-script';
       script.src = 'https://assets.calendly.com/assets/external/widget.js';
-      script.type = 'text/javascript';
       script.async = true;
       document.body.appendChild(script);
     }
+
+    const adjustHeight = () => {
+      const iframe = calendlyRef.current?.querySelector('iframe');
+      if (iframe && calendlyRef.current) {
+        iframe.style.height = `${calendlyRef.current.clientHeight}px`;
+      }
+    };
+
+    const observer = new ResizeObserver(adjustHeight);
+    if (calendlyRef.current) observer.observe(calendlyRef.current);
+
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div>
       <div
         ref={calendlyRef}
-        className="calendly-inline-widget"
+        className="calendly-inline-widget w-full rounded-lg border border-border shadow-sm"
         data-url="https://calendly.com/thedeejayrane"
-        style={{ minWidth: '320px', height: '630px' }}
+        style={{
+          minWidth: '320px',
+          height: '600px', 
+          overflow: 'hidden',
+        }}
       />
-      <h4 className="font-semibold text-lg mb-2">Calendly Integration</h4>
+      <h4 className="font-semibold text-lg mt-4 mb-2">Calendly Integration</h4>
       <p className="text-muted-foreground text-sm">
-        Calendly booking widget would be embedded here.<br />
+        Calendly booking widget is embedded below.<br />
         Visitors can select available time slots for consultations.
       </p>
     </div>
@@ -88,10 +102,10 @@ export function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-2 items-start gap-12 lg:gap-16">
           
           <motion.div
-            className="space-y-8"
+            className="space-y-8 min-h-[550px]"
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -125,7 +139,6 @@ export function ContactSection() {
               </div>
             </div>
 
-            
             <div>
               <h4 className="text-lg font-semibold mb-4">Event Types I Specialize In:</h4>
               <div className="space-y-3">
@@ -147,7 +160,6 @@ export function ContactSection() {
               </div>
             </div>
 
-            
             <motion.div
               className="grid grid-cols-3 gap-4 pt-6 border-t border-border"
               initial={{ opacity: 0, y: 20 }}
@@ -159,9 +171,8 @@ export function ContactSection() {
             </motion.div>
           </motion.div>
 
-          
           <motion.div
-            className="bg-muted/30 rounded-xl p-8"
+            className="bg-muted/30 rounded-xl p-5"
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -169,20 +180,22 @@ export function ContactSection() {
             <div className="text-center mb-6">
               <h3 className="text-xl font-bold mb-2">Book a Consultation</h3>
               <p className="text-muted-foreground text-sm">
-                Schedule a free 15-minute call to discuss your event needs
+                Schedule a Google call, Physical meet or Phone Call to discuss your event needs
               </p>
             </div>
-            
-            
-            <div className="bg-white rounded-lg p-8 text-center border-2 border-dashed border-border min-h-[400px] flex items-center justify-center">
+
+
+            <div className="bg-white rounded-lg p-8 text-center border-2 border-dashed border-border flex items-center justify-center">
               <div className="space-y-4">
                 <Calendar className="w-16 h-16 text-muted-foreground mx-auto" />
-                <div className="calendly-inline-widget" data-url="https://calendly.com/thedeejayrane" style={{ minWidth: '320px', height: '630px' }}>
-                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-                </div>
+                <div
+                  className="calendly-inline-widget"
+                  data-url="https://calendly.com/thedeejayrane"
+                  style={{ minWidth: '320px', height: '550px', overflow: 'hidden' }}
+                />
                 <button 
                   onClick={() => window.open('https://calendly.com/thedeejayrane', '_blank')}
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-colors"
+                  className="mt-6 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold transition-colors"
                 >
                   Open Calendly
                 </button>
@@ -191,9 +204,8 @@ export function ContactSection() {
           </motion.div>
         </div>
 
-
         <motion.div
-          className="text-center mt-16 p-8 bg-primary/5 rounded-xl"
+          className="text-center p-8 bg-primary/5 rounded-xl"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 1 }}
